@@ -25,6 +25,7 @@
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+    padding-left: 20px;
 }
 
 #header .logo a{
@@ -40,6 +41,7 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+    padding-right: 20px;
 }
 
 #header .gnb li {
@@ -103,23 +105,15 @@
 .wrapper ul {
     position: relative;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .wrapper ul li {
     position: relative;
-    display: inline-block;
-    width: 31%;
-    margin-right: 3%;
     cursor: pointer;
-    margin-top: 3%;
-}
-
-.wrapper ul li:nth-child(3n) {
-    margin-right: 0;
-}
-
-.wrapper ul li:nth-child(1), .wrapper ul li:nth-child(2), .wrapper ul li:nth-child(3) {
-    margin-top: 0;
+    margin: 1%;
 }
 
 .wrapper ul li img {
@@ -199,6 +193,113 @@
     margin: 0 10px;
 }
 
+/* info */
+.profile {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.profile img {
+    width: 150px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+}
+
+.profile li{
+    font-size: 1.2rem;
+	font-family: 'Playfair Display', sans-serif;
+    color: #222;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.profile li:first-child{
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.profile li a{    
+    font-size: 1.2rem;
+	font-family: 'Playfair Display', sans-serif;
+    color: #222;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.profile .txt {
+    margin-top: 20px;
+    font-size: 1.0rem;
+}
+
+.etc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.etc .title {
+    font-size: 1.0rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.etc li {
+    font-size: 0.9rem;
+}
+
+.edu, .certf, .skill {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+}
+
+.skill {
+    width: 35%;
+    margin-right: 0 !important;
+}
+
+.bar_wrap {
+    margin: 10px 0;
+}
+
+.bar_wrap p {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.bar_wrap span {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.bar {
+    width: 100%;
+    height: 5px;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    transition: all 2s linear;
+  }
+  
+.bar_inner {
+    width: 0;
+    height: 5px;
+    line-height: 5px;
+    background: #222;
+    border-radius: 5px 0 0 5px;
+  }
+
+/* work */
+
 .info {
     position: relative;
     display: block;
@@ -213,16 +314,41 @@
 }
 
 .info .txt {
-    font-size: 1.2rem;
-    padding: 10px;
+    margin-top: 20px;
+    font-size: 1.0rem;
 }
+
+.ico {
+    font-size: 0;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.ps {    
+    background-image: url(../images/main/ps_icon.png);
+}
+
+.html {
+    background-image: url(../images/main/html_icon.png);
+}
+
+
+.css {
+    background-image: url(../images/main/css_icon.png);
+}
+
 
 .info .info_img {
     display: block;
-    width: 1180px;
+    max-width: 1180px;
     margin-top: 30px;
     overflow-y: auto;
     white-space: nowrap;
+    cursor: move;
+    transition: transform ease-in-out 0.3s;
 }
 
 .info .info_img div{
@@ -230,6 +356,10 @@
     width: 800px;
     margin-right: 25px;
     padding-bottom: 20px;
+}
+
+.info .info_img .zoom {
+    width: 100%;
 }
 
 .info .info_img div.app {
@@ -250,7 +380,10 @@
 }
 
 .code {
-    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px auto;
 }
 
 .code .code_txt {
@@ -259,16 +392,44 @@
 }
 
 .code1 {
-    display: inline-block;
-    max-width: 55%;
-    margin-right: 1%;
+    width: 55%;
 }
 
 .code2 {
-    display: inline-block;
-    max-width: 44%;
+    width: 45%;
 }
 
 .colorscripter-code {
     height: 500px;
+}
+
+@media screen and (max-width: 768px) {
+
+    #content {
+        padding: 80px 10px 0;
+    }
+
+	.code1 {
+        width: 100%;
+    }
+    
+    .code2 {
+        width: 100%;
+    }
+
+    .etc {
+        justify-content: start !important;
+    }
+
+    .skill {
+        width: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 1024px) {
+
+    #content {
+        padding: 80px 10px 0;
+    }    
 }
